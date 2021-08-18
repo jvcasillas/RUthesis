@@ -1,0 +1,129 @@
+\chapter{Introduction - Markdown and \LaTeX\label{intro}}
+
+
+
+This is Rmarkdown template for writing a dissertation at Rutgers University. 
+It uses the `ruthesis` class, which is based off the University of Arizona `uathesis` class. 
+It is fully compatibly with `Rmarkdown`. 
+
+The majority of the heavy lifting was already done by colleagues in the Department of Planetary Sciences at the U of A (see the `uathesis.cls` file for more information). 
+In essence all I have done is update the `uathesis` class I previously modified so that it would play nicely with `knitr`. 
+As of now (`r date()`), knitr and R are fully functional. 
+That said, some other format issues still remain.
+
+# Issues\label{ex-issues}
+
+- There are currently no (known) issues (what!?)
+
+# Basic structure
+
+The basic structure of the thesis package has been cleaned up significantly. 
+There are now two folders inside the main directory: **includes** and **sections**. 
+The `includes` folder contains most of the under the hood files that you will generally edit one time to set up the project metadata (i.e. the title, committee members, etc.), but also includes .bib files and figures. 
+
+The `sections` folder is where the chapters of the dissertation live. 
+Each chapter is its own .Rmd file. 
+You will write you chapters in these files and compile the master document. 
+This folder is home to the other less important (but required) sections (i.e. acknowledgments, dedications, abstracts and appendices).^[All of these files are imported into the final pdf in the `master.Rmd` file via `knitr` or specific commands written for the `uathesis` class.] 
+The underlying engine is \LaTeX. 
+To generate the dissertation pdf, compile the `master.Rmd` file in your favorite text editor.
+
+
+# Sections\label{ex-sections}
+
+You can use either markdown or \LaTeX\ to create sections in the document (see general markdown syntax for more information). 
+In both cases, cross-referencing figure, tables, sections, chapters, etc. can only be done if a `label{}` is created. 
+For example, this is section \ref{ex-sections}. 
+I generated that number by first labeling the section\ldots  
+
+
+```
+# Sections\label{ex-sections}
+```
+
+\noindent and then by typing\ldots  
+
+
+```
+\ref{ex-sections}
+```
+
+\noindent It is helpful to use this with figures and tables. 
+Like, for Figure \ref{fig:firstfig} and Table \ref{sampletable} below. 
+
+## Subsections
+
+You can use hashtags or the `\subsection{}` command to create a subsection. 
+
+### Subsubsections
+
+You can use `\subsubsection{}` or 3 hashtags.
+
+\paragraph{Subsubsubsections}
+
+If you really need to go this deep, I suggest using the `\paragraph{}` command.
+
+## Paragraph formatting
+
+By default the first paragraph of a new chapter, section, subsection, etc. will not be indented, but every new paragraph thereafter will be. 
+
+Like this paragraph, for examle. 
+If for some reason you need to override the automatic indenting, be sure to use the \LaTeX\ command `\noindent`. 
+
+# Math Example\label{math}
+
+Equations can be rendered beautifully by using the `equation` environment.
+
+\begin{equation}
+	y = mx + b
+\end{equation}
+
+\noindent But, old school math works too!
+
+$$ \begin{aligned} y &= \beta_0 + \beta_1 + x_1 + \epsilon \end{aligned} $$
+
+\noindent But putting it inside the `equation` environment will number it (as in the first example), and has the added advantage of centering automatically as well. 
+
+\begin{equation}
+	y = \beta_0 + \beta_1 + x_1 + \epsilon
+\end{equation}
+
+
+# How to cite your references\label{ref_citation}
+
+One relevant difference from the previous iteration of this package is that it now uses `Rmarkdown/pandoc` to render citations. 
+This is a work is progress, but for now you can reference by using the standard `[@citekey]` method. 
+For example, citations are cool [@article; @articletwo]. 
+For inline citations, remove the brackets (i.e. `@articletwo`). As in @articletwo said many things.
+
+
+
+# Graphics\label{ex-graphics}
+
+Figures are automatically included in the list of figures and you can use the brackets in the caption to establish a different LOF caption (separate from the one you see below).
+Below is an example of how you can include a figure using \LaTeX. 
+If you prefer to use R or markdown instead see the examples in the subsequent chapters. 
+
+\begin{figure}[h]
+	\centering
+	\caption[Example figure]{Here is a screeny of the sections folder.}
+	\includegraphics[width=.75\textwidth]{./includes/figures/ex.png}
+	\label{fig:firstfig}
+\end{figure}
+
+One thing to remember is that when including images the home directory is always that of the `master.Rmd` document. 
+Therefore, it is necessary to establish the path to the img file from there. 
+Here is the code used to produce the above figure:
+
+
+```
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.75\textwidth]{./includes/figures/ex.png}
+	\caption[Example figure]{Here is a screeny of the sections folder.}
+	\label{fig:firstfig}
+\end{figure}
+```
+
+
+

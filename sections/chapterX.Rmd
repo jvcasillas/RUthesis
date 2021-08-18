@@ -1,0 +1,68 @@
+\chapter{More \LaTeX\label{exp1}}
+
+# Tables\label{ex-tables}
+
+Tables work the same way as before\ldots
+
+\begin{table}[h]
+  \begin{center}
+  \caption[Another table caption here]{Another table caption (to appear with the actual table). \label{table1}}
+  \vspace{0.3in}
+    \begin{tabular}{ccc}
+      \hline 
+      \hline
+      Col A & Col B & Col C \\
+      \hline
+      1     & 2     & 3     \\
+      4     & 5     & 6     \\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+
+They can be rendered in markdown now as well (and can include r code), but I don't recommend this combination (for now)\ldots
+
+
+|   Col 1   |   Col 2   |  col 3  |
+| :-------- | :-------- | :------ |
+| `r 2 + 2` | plus      | `r 4*2` |
+| equals    | `r 4 + 8` | nice!   |
+
+
+
+On the next page is a sample table, placed on the page by itself. 
+Sometimes tables can be wider than they are tall, and you may need to rotate the table by $90^{\circ}$ to make it fit better on a page by itself. 
+To do that you can use the lscape package. 
+To use it, wrap the table commands in a begin and end landscape command and that table will be properly rotated. 
+
+\begin{landscape}
+\begin{table}[p!]
+  \begin{center}
+  \caption[Short table caption here]{Sample table caption (to appear with the actual table). \label{sampletable}}
+  \vspace{0.3in}
+    \begin{tabular}{ccc}
+      \hline 
+      \hline
+      Col A & Col B & Col C \\
+      \hline
+      1     & 2     & 3     \\
+      4     & 5     & 6     \\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+\end{landscape}
+
+Note that the \verb=\caption= command can have a short and a long version
+inside a table environment, just like inside a figure environment (see \ref{graphics}).
+
+
+
+
+# TIPA\label{using IPA}
+
+You can include IPA characters via the `TIPA` package. 
+Here is an example:
+
+\textipa{[Sip]-[SIp]} - Looks good. 

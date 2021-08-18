@@ -1,0 +1,47 @@
+% Metadata
+\completetitle{[INSERT TITLE OF DOCTORAL DISSERTATION]} % Thesis title
+\fullname{[INSERT AUTHOR'S NAME]} % Full name
+\degreename{Doctor of Philosophy} % Title of degree
+\programname{[insert your graduate program's official name]} % Program
+\directorname{[insert Dissertation Director's name]} % Chair of committee
+\defensemonth{[Month]} % Month degree is conferred
+\defenseyear{[Year]} % Year degree is conferred
+
+% Copyright
+\makecopyright
+
+% Titlepage
+\maketitlepage
+
+% Abstract
+\incabstract{sections/abstract}
+
+% Acknowledgements
+\incacknowledgements{sections/acknowledgements}
+
+% Dedication
+\incdedication{sections/dedication}
+
+% TOC
+\tableofcontents
+
+% LOT
+\listoftables
+
+% LOF
+\listoffigures
+
+\clearpage
+
+% Switch to Arabic numerals in upper right
+\pagestyle{fancy}
+\fancyhf{} %clear all headers and footers
+\fancyhead[R]{\thepage}
+
+\fancypagestyle{plain}{%
+\fancyhf{} %clear all headers and footers
+\fancyhead[R]{\thepage}
+}
+
+\pagenumbering{arabic}
+\setcounter{page}{1} % set the page number appropriately

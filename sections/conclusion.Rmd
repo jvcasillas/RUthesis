@@ -1,0 +1,42 @@
+\chapter{Sourcing .R files\label{conclusión}}
+
+# Import scripts
+
+We can use the following command to import an r script: 
+
+```{r 'import-ex', echo=TRUE}
+library(knitr)
+read_chunk('../includes/scripts/test.R')
+```
+
+Notice that the `read_chunk()` command takes **this** file as the reference for specifying the path (this is different with regard to inserting graphics). 
+
+# Call chunks
+
+We can directly call knitr chunks from the `test.R` script. 
+First let's load the libraries we will need.
+
+```{r, 'libs', echo=TRUE}
+```
+
+Now we will generate some data.
+
+```{r, 'data', echo=TRUE}
+```
+
+Let's fit a model. 
+
+```{r, 'fit', echo=TRUE}
+```
+
+What is the phoneme boundary?
+
+```{r, 'cross', echo=TRUE}
+```
+
+It looks like the boundary is at `r round(lingStuff::cross_over(glm, cont_pred = "vot"), 2)`. 
+Good. 
+Let's plot it to see what it looks like:
+
+```{r, 'plot', echo=TRUE, fig.cap='This is the caption', fig.subcap='Not sure'}
+```

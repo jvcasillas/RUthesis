@@ -1,0 +1,43 @@
+\chapter{Using R\label{rcode}}
+
+# Basic math
+
+Here are some simple math examples
+
+```{r, subtraction}
+24 - 23
+```
+
+```{r, multiplication}
+2345 * 23
+```
+
+# Inline expressions
+
+You can use inline r expressions like 2 plus 2 = `r 2 - 2`
+
+# Run models
+
+```{r, 'model-ex', results='asis', message=FALSE, warning=FALSE}
+library(xtable)
+library(dplyr)
+
+mtcars %>%
+  glm(vs ~ mpg, data = ., family = "binomial") %>%
+  xtable(., type = "latex") %>%
+  print(comment = FALSE)
+```
+
+# Plots
+
+And you can generate plots directly from this file as well.
+
+```{r, 'plot-ex', message=FALSE}
+library(ggplot2)
+
+ggplot(mtcars, aes(x = mpg, y = vs)) + 
+  geom_point() + 
+  geom_smooth(method = "glm", method.args = list(family = "binomial"), 
+  formula = "y ~ x")
+```
+

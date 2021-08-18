@@ -1,0 +1,42 @@
+% Sample Dissertation, Thesis, or Document %
+%            for use with the              %
+%  University of Arizona Thesis Class,     %
+%               uathesis.cls               %
+%                                          %
+% Restructed to work with Rmarkdown and R  %
+%                    by                    %
+%             Joseph V. Casillas           %
+%                (6/24/2015)               %
+%------------------------------------------%
+
+
+% There are five copyright options.  Copyright, no copyright, and three
+% different Creative Commons licences. See uathesis.cls. This is 
+% established in the master.Rmd file, but was left here for clarity.
+
+
+% \documentclass[dissertation]{uathesis}
+% \documentclass[dissertation,copyright]{uathesis}
+% \documentclass[dissertation,CC-BY]{uathesis}
+% \documentclass[dissertation,CC-BY-SA]{uathesis}
+% \documentclass[dissertation,CC-BY-ND]{uathesis}
+% \documentclass[thesis]{uathesis}
+% \documentclass[document]{uathesis}
+
+
+% Packages
+% Add all packages you wish to use here
+
+\usepackage{graphicx}
+\usepackage{tipa}
+\usepackage{lscape}
+\usepackage{etoolbox}
+
+\makeatletter
+\pretocmd{\chapter}{\addtocontents{toc}{\protect\addvspace{5\p@}}}{}{}
+\pretocmd{\section}{\addtocontents{toc}{\protect\addvspace{0\p@}}}{}{}
+\makeatother
+
+
+
+
