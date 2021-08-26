@@ -5,13 +5,12 @@ The template is based on the `uathesis` class and modified to conform with the R
 
 ## Dependencies
 
-In order to render the `index.Rmd` file 'out of the box' you need to have 
-the following r packages installed:
+In order to render the `index.Rmd` file 'out of the box' you need to have the following r packages installed:
 
 - dplyr
 - ggplot2
-- xtable
-- [lingStuff](https://www.jvcasillas.com/lingStuff/)
+- broom
+- knitr
 
 ## Issues
 
