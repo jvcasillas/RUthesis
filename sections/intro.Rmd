@@ -75,7 +75,7 @@ If for some reason you need to override the automatic indenting, be sure to use 
 Equations can be rendered beautifully by using the `equation` environment.
 
 \begin{equation}
-	y = mx + b
+  y = mx + b
 \end{equation}
 
 \noindent But, old school math works too!
@@ -85,7 +85,7 @@ $$ \begin{aligned} y &= \beta_0 + \beta_1 + x_1 + \epsilon \end{aligned} $$
 \noindent But putting it inside the `equation` environment will number it (as in the first example), and has the added advantage of centering automatically as well. 
 
 \begin{equation}
-	y = \beta_0 + \beta_1 + x_1 + \epsilon
+  y = \beta_0 + \beta_1 + x_1 + \epsilon
 \end{equation}
 
 
@@ -105,10 +105,10 @@ Below is an example of how you can include a figure using \LaTeX.
 If you prefer to use R or markdown instead see the examples in the subsequent chapters. 
 
 \begin{figure}[h]
-	\centering
-	\caption[Example figure]{Here is a screeny of the sections folder.}
-	\includegraphics[width=.75\textwidth]{./includes/figures/ex.png}
-	\label{fig:firstfig}
+  \centering
+  \caption[Example figure]{Here is a screeny of the sections folder.}
+  \includegraphics[width=.75\textwidth]{./includes/figures/ex.png}
+  \label{fig:firstfig}
 \end{figure}
 
 One thing to remember is that when including images the home directory is always that of the `master.Rmd` document. 
@@ -118,10 +118,10 @@ Here is the code used to produce the above figure:
 
 ```
 \begin{figure}[h]
-	\centering
-	\includegraphics[width=.75\textwidth]{./includes/figures/ex.png}
-	\caption[Example figure]{Here is a screeny of the sections folder.}
-	\label{fig:firstfig}
+  \centering
+  \includegraphics[width=.75\textwidth]{./includes/figures/ex.png}
+  \caption[Example figure]{Here is a screeny of the sections folder.}
+  \label{fig:firstfig}
 \end{figure}
 ```
 
