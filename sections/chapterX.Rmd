@@ -54,8 +54,7 @@ To use it, wrap the table commands in a begin and end landscape command and that
 \end{table}
 \end{landscape}
 
-Note that the \verb=\caption= command can have a short and a long version
-inside a table environment, just like inside a figure environment (see \ref{graphics}).
+Note that the \verb=\caption= command can have a short and a long version inside a table environment, just like inside a figure environment (see \ref{graphics}).
 
 
 
