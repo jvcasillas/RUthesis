@@ -22,7 +22,7 @@ Table \@ref(tab:table-summary) of the supplementary materials provides a numeric
 ```{r, table-summary, eval=T, echo=F}
 as_tibble(mtcars) %>% 
   slice(1:10) %>% 
-  kable(format = "pandoc", align = rep("r", 11), 
+  knitr::kable(format = "pandoc", align = rep("r", 11), 
         caption = "This is the table caption.",
         label = "table-summary")
 ```
