@@ -36,3 +36,5 @@ vignettes/*.pdf
 rsconnect/
 
 index.aux
+
+*.DS_Store
