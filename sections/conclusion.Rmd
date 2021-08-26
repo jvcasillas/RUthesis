@@ -5,7 +5,7 @@
 We can use the following command to import an r script: 
 
 ```{r 'import-ex', echo=TRUE}
-library(knitr)
+library("knitr")
 read_chunk('../includes/scripts/test.R')
 ```
 
@@ -34,7 +34,7 @@ What is the phoneme boundary?
 ```{r, 'cross', echo=TRUE}
 ```
 
-It looks like the boundary is at `r round(lingStuff::cross_over(glm, cont_pred = "vot"), 2)`. 
+It looks like the boundary is at `r as.numeric(coef(glm)[1] / (coef(glm)[2] * -1))`. 
 Good. 
 Let's plot it to see what it looks like:
 
