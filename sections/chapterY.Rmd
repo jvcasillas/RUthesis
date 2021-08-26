@@ -19,13 +19,16 @@ You can use inline r expressions like 2 plus 2 = `r 2 - 2`
 # Run models
 
 ```{r, 'model-ex', results='asis', message=FALSE, warning=FALSE}
-library(xtable)
-library(dplyr)
+library("dplyr")
+library("broom")
 
-mtcars %>%
-  glm(vs ~ mpg, data = ., family = "binomial") %>%
-  xtable(., type = "latex") %>%
-  print(comment = FALSE)
+# Fit a model
+mod <- glm(vs ~ mpg, data = mtcars, family = "binomial")
+
+# make a table
+mod %>% 
+  broom::tidy() %>% 
+  knitr::kable(., format = "pandoc") 
 ```
 
 # Plots
@@ -33,7 +36,7 @@ mtcars %>%
 And you can generate plots directly from this file as well.
 
 ```{r, 'plot-ex', message=FALSE}
-library(ggplot2)
+library("ggplot2")
 
 ggplot(mtcars, aes(x = mpg, y = vs)) + 
   geom_point() + 
