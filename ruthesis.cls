@@ -628,7 +628,7 @@ Dissertation Director: \\
 % override the document's page style.
 
 {
-\renewcommand{\baselinestretch}{1} % single spaced here
+\renewcommand{\baselinestretch}{2} % Update (20211004): Requires double space
 \small\normalsize % size switch to make the spacing behave
 
 \chapter*{ACKNOWLEDGEMENTS}
