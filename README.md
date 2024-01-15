@@ -20,3 +20,4 @@ In order to render the `index.Rmd` file 'out of the box' you need to have the fo
 
 - convert to package
 - create hex image
+- export to qmd
